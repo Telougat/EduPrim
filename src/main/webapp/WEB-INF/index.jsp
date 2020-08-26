@@ -12,6 +12,9 @@
     <title>EduPrim</title>
 </head>
 <body>
-    <c:out value="Test JSTL"/>
+    <c:out value="JSTL fonctionne"/>
+    <p>
+        ${test}
+    </p>
 </body>
 </html>

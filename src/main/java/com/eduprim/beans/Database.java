@@ -12,14 +12,17 @@ public class Database {
     private final String args;
     private final String user;
     private final String password;
-    private Connection connection;
 
-    public Database() {
+    protected Connection connection;
+
+    public Database(Boolean setAutoConnection) {
         this.bdd = "javaCP";
         this.url = "jdbc:mysql://51.15.2.200:3306/";
         this.args = "?serverTimezone=UTC";
         this.user = "javaCP";
         this.password = "enloketi";
+        if (setAutoConnection)
+            this.getConnection();
     }
 
     public Connection getConnection() {

@@ -18,6 +18,9 @@ public class Index extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Adulte logger = Adulte.connexion("fpichon@cesi.fr", "123");
+        System.out.println("Log successful");
+        System.out.println(logger.getNom() + " " + logger.getPrenom() + " " + logger.getTelephone() + "  " + logger.getMail());
         this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
     }
 }

@@ -9,9 +9,9 @@ public class Emprunt extends Database {
     private Livre livre;
     private Utilisateur utilisateur;
 
-    public Emprunt(Timestamp dateDebut, Timestamp dateFin, Livre livre, Utilisateur utilisateur) {
+    public Emprunt(Timestamp dateDebut, Timestamp dateFin, Livre livre, Utilisateur utilisateur, boolean ancien) {
         super(true);
-        if (!Emprunt.isEmprunter(livre))
+        if (!Emprunt.isEmprunter(livre) && !ancien)
         {
             try {
                 PreparedStatement ps = this.connection.prepareStatement("INSERT INTO Emprunte(ID, ID_Livres, DateDebut, DateFin) VALUES (?, ?, ?, ?)");
@@ -28,6 +28,11 @@ public class Emprunt extends Database {
             catch (SQLException ex) {
                 ex.printStackTrace();
             }
+        } else if(ancien) {
+            this.dateDebut = dateDebut;
+            this.dateFin = dateFin;
+            this.utilisateur = utilisateur;
+            this.livre = livre;
         }
     }
 
@@ -38,7 +43,13 @@ public class Emprunt extends Database {
         try {
             PreparedStatement ps = connection.prepareStatement("SELECT e.DateDebut, e.DateFin, l.ID as livreID, l.Titre as livreTitre, l.Auteur as livreAuteur, l.Reference as livreReference FROM Emprunte as e" +
                     " INNER JOIN Livres as l ON l.ID = e.ID_Livres" +
-                    " WHERE e.ID = 1");
+                    " WHERE e.ID = ?");
+            ps.setInt(1, utilisateur.getID());
+            ResultSet result = ps.executeQuery();
+            while (result.next()) {
+                Livre newLivre = new Livre(result.getInt("livreID"), result.getString("livreTitre"), result.getString("livreAuteur"), result.getString("livreReference"));
+                emprunts.add(new Emprunt(result.getTimestamp("DateDebut"), result.getTimestamp("DateFin"), newLivre, utilisateur, true));
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

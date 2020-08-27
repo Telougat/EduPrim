@@ -65,7 +65,15 @@ public class Livre extends Database {
 
     public boolean rendre() {
         if (Emprunt.isEmprunter(this)) {
-
+            try {
+                PreparedStatement ps = this.connection.prepareStatement("UPDATE Emprunte SET DateFin = ? WHERE ID_Livres = ?");
+                ps.setInt(1, this.ID);
+                int modifications = ps.executeUpdate();
+                if (modifications > 0)
+                    return true;
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
         return false;
     }

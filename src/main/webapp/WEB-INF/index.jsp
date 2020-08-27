@@ -10,13 +10,13 @@
 <html>
 <head>
     <title>EduPrim</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css" />
 </head>
 <body>
-    <p class="text-center text-red-500 text-4xl underline cursor-pointer">
+    <p class="text-center text-rose text-4xl underline cursor-pointer">
         <c:out value="JSTL fonctionne"/>
     </p>
-    <p class="text-center text-blue-500 text-3xl">
+    <p class="text-center text-gris-clair text-3xl">
         Test de CSS
     </p>
 </body>

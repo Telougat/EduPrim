@@ -9,9 +9,9 @@ public class UtilisationMateriel extends Database{
     private Materiel materiel;
     private Utilisateur utilisateur;
 
-    public UtilisationMateriel(Timestamp dateDebut, Timestamp dateFin, Materiel materiel, Utilisateur utilisateur, boolean ancien) {
+    public UtilisationMateriel(Timestamp dateDebut, Timestamp dateFin, Materiel materiel, Utilisateur utilisateur, boolean existe) {
         super(true);
-        if (!UtilisationMateriel.isEmprunter(materiel) && !ancien)
+        if (!UtilisationMateriel.isEmprunter(materiel) && !existe)
         {
             try {
                 PreparedStatement ps = this.connection.prepareStatement("INSERT INTO Utilise(ID, ID_Materiels, DateDebut, DateFin) VALUES (?, ?, ?, ?)");
@@ -28,7 +28,7 @@ public class UtilisationMateriel extends Database{
             catch (SQLException ex) {
                 ex.printStackTrace();
             }
-        } else if(ancien) {
+        } else if(existe) {
             this.dateDebut = dateDebut;
             this.dateFin = dateFin;
             this.utilisateur = utilisateur;

@@ -47,12 +47,25 @@
     <div x-data="{ open: false }">
         <button class="bg-violet rounded text-blanc font-bold py-2 px-4" type="button"@click="open = true">Ajouter un livre</button>
 
-        <ul
+        <div
                 x-show="open"
                 @click.away="open = false"
         >
-            Dropdown Body
-        </ul>
+            <div class="z-1000 w-full flex flex-col items-center justify-center font-sans bg-blanc">
+                <div v-if="modal.visible" @click.self="modal.visible = false" class="h-screen w-full absolute flex items-center justify-center bg-modal">
+                    <div class="bg-white rounded shadow p-8 m-4 max-w-xs max-h-full text-center overflow-y-scroll">
+                        <h1>Informations du livre</h1>
+                        <div class="mb-8">
+                            Titre :   <input type="text">
+                            Auteur :   <input type="text">
+                        </div>
+                        <div class="flex justify-center">
+                            <button class="flex-no-shrink text-white py-2 px-4 rounded bg-teal hover:bg-teal-dark" type="submit">Valider</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

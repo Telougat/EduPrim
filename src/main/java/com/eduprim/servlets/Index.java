@@ -1,8 +1,6 @@
 package com.eduprim.servlets;
 
-import com.eduprim.beans.Adulte;
-import com.eduprim.beans.Status;
-import com.eduprim.beans.Utilisateur;
+import com.eduprim.beans.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

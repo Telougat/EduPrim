@@ -18,7 +18,6 @@ public class Adulte extends Utilisateur {
 
     public Adulte(Utilisateur utilisateur, long telephone) {
         super();
-        if (utilisateur.getStatus().getLabel().equals("Professeur") || utilisateur.getStatus().getLabel().equals("Directeur")) {
             if (this.connection == null)
                 this.getConnection();
             try {
@@ -42,7 +41,15 @@ public class Adulte extends Utilisateur {
             catch (SQLException ex) {
                 ex.printStackTrace();
             }
-        }
+
+    }
+
+    public long getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(long telephone) {
+        this.telephone = telephone;
     }
 
     private void saveNewAdulte() {
@@ -65,7 +72,9 @@ public class Adulte extends Utilisateur {
     }
 
     public boolean findAdulte(int id) {
-        super.findUtilisateur(id);
+        boolean utilisateurFound = super.findUtilisateur(id);
+        if (!utilisateurFound)
+            return false;
         try {
             PreparedStatement ps = this.connection.prepareStatement("SELECT Telephone FROM Adulte WHERE ID = ?");
             ps.setInt(1, id);

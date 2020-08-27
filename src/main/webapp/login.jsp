@@ -12,10 +12,10 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css" />
     </head>
     <body class="h-screen overflow-hidden flex items-center justify-center">
-        <div>
+       <div class="w-1/3">
             <img src="${pageContext.request.contextPath}/ressources/images/logo.png" alt="logo">
-        </div>
-        <div class="w-4/5 lg:w-auto rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+       </div>
+       <div class="w-4/5 lg:w-auto rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
             <div style="font-family: Tahoma,sans-serif;" class="mb-4 text-6xl text-gris text-center">
                 <h1>Vous êtes de retour !</h1>
             </div>

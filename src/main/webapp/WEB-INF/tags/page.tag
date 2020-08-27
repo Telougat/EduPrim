@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css"/>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <body>
-<header id="pageheader">
+
     <header class="w-full text-gray-700 bg-blanc dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div x-data="{ open: false }"  class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div @click.away="open = false" class="p-4 flex flex-row items-end justify-end">
@@ -23,12 +23,11 @@
             </nav>
         </div>
     </header>
-</header>
+
 <div id="body">
     <jsp:doBody/>
 </div>
 <footer id="pagefooter">
-    TEST
 </footer>
 </body>
 </html>

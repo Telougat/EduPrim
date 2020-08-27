@@ -157,7 +157,7 @@ public class Utilisateur extends Database {
     }
 
     public boolean linkToClasse(Classe classe) {
-        if (this.ID <=0)
+        if (this.ID <= 0)
             return false;
         if (this.connection == null)
             this.getConnection();

@@ -85,6 +85,22 @@ public class Livre extends Database {
         return livres;
     }
 
+    public void findLivre(int id) {
+        if (this.connection == null)
+            this.getConnection();
+        try {
+            PreparedStatement ps = this.connection.prepareStatement("SELECT * FROM Livres WHERE ID = ?");
+            ps.setInt(1, id);
+            ResultSet result = ps.executeQuery();
+            result.next();
+            this.ID = result.getInt("ID");
+            this.titre = result.getString("Titre");
+            this.reference = result.getString("Reference");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
     public boolean rendre() {
         if (Emprunt.isEmprunter(this)) {
             try {

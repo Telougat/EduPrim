@@ -27,22 +27,9 @@
                 </tr>
             </thead>
             <tbody>
-                <%
-                    ArrayList<Livre> listeLivre = Livre.getAllLivres();
-
-
-
-                %>
-
-                listeLivre: <%=Livre.getAllLivres() %>
-                
-                <c:forEach items="${listeLivre}" var="item">
-                    Item = ${item}<br>
+                <c:forEach items="${livres}" var="item">
+                    Item = ${item.getTitre()}<br>
                 </c:forEach>
-
-
-
-
             </tbody>
         </table>
     </div>

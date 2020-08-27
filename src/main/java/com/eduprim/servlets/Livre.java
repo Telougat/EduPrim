@@ -14,6 +14,7 @@ public class Livre extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("livres", com.eduprim.beans.Livre.getAllLivres());
         this.getServletContext().getRequestDispatcher("/WEB-INF/View/livre.jsp").forward(request, response);
     }
 }

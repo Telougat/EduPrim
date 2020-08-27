@@ -5,16 +5,7 @@
   Time: 12:15
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css" />
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-</head>
-<body>
-
-<div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+<div class="w-full text-gray-700 bg-blanc dark-mode:text-gray-200 dark-mode:bg-gray-800">
     <div x-data="{ open: false }"  class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div @click.away="open = false" class="p-4 flex flex-row items-center justify-between">
             <div class="w-24 h-16">
@@ -27,13 +18,11 @@
                 </svg>
             </button>
         </div>
-        <nav x-data="{ borderShow : ${pageContext.request.contextPath} }" :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-            <a :class="{ 'md:border-b-2 border-violet' : borderShow === 'classes' }" class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 text-violet" href="#">Classe</a>
+        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+            <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 text-violet md:border-b-2 border-violet" href="#">Classe</a>
             <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 text-violet" href="#">Matériels</a>
             <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 text-violet" href="#">Livres</a>
             <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 border border-4 border-solid border-violet  hover:bg-violet hover:text-blanc text-violet" href="#">Déconnexion</a>
         </nav>
     </div>
 </div>
-</body>
-</html>

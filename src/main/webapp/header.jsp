@@ -27,10 +27,10 @@
             </button>
         </div>
         <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-            <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 text-violet" href="#">Classe</a>
-            <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 text-violet" href="#">Matériels</a>
-            <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 text-violet" href="#">Livres</a>
-            <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-semibold bg-transparent md:mt-0 md:ml-4 border border-solid border-violet border-1 hover:bg-violet hover:text-blanc text-violet" href="#">Déconnexion</a>
+            <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 text-violet border-b-2 border-violet" href="#">Classe</a>
+            <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 text-violet" href="#">Matériels</a>
+            <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 text-violet" href="#">Livres</a>
+            <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 border border-4 border-solid border-violet  hover:bg-violet hover:text-blanc text-violet" href="#">Déconnexion</a>
         </nav>
     </div>
 </div>

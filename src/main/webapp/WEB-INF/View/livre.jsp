@@ -8,10 +8,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <html>
 <head>
     <title>Emprunt de livres</title>
+
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -37,9 +42,18 @@
                 </c:forEach>
             </tbody>
         </table>
-        <div>
-            <button class="bg-violet rounded text-blanc font-bold py-2 px-4" type="button">Ajouter</button>
-        </div>
     </div>
+
+    <div x-data="{ open: false }">
+        <button class="bg-violet rounded text-blanc font-bold py-2 px-4" type="button"@click="open = true">Ajouter un livre</button>
+
+        <ul
+                x-show="open"
+                @click.away="open = false"
+        >
+            Dropdown Body
+        </ul>
+    </div>
+
 </body>
 </html>

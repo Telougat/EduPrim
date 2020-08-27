@@ -17,13 +17,6 @@ public class Classes extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (Helpers.userConnected(request))
-        {
-            this.getServletContext().getRequestDispatcher("/WEB-INF/classes.jsp").forward(request, response);
-        }
-        else
-        {
-            //TODO: send 404 page
-        }
+        this.getServletContext().getRequestDispatcher("/WEB-INF/classes.jsp").forward(request, response);
     }
 }

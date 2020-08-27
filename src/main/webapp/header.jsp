@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 27/08/2020
-  Time: 12:15
-  To change this template use File | Settings | File Templates.
---%>
-<div class="w-full text-gray-700 bg-blanc dark-mode:text-gray-200 dark-mode:bg-gray-800">
+<header class="w-full text-gray-700 bg-blanc dark-mode:text-gray-200 dark-mode:bg-gray-800">
     <div x-data="{ open: false }"  class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div @click.away="open = false" class="p-4 flex flex-row items-end justify-end">
             <button class="md:hidden" @click="open = !open">
@@ -22,4 +15,4 @@
             <a class="uppercase tracking-widest px-4 py-2 mt-2 text-sm font-bold bg-transparent md:mt-0 md:ml-4 border border-4 border-solid border-violet  hover:bg-violet hover:text-blanc text-violet" href="#">Déconnexion</a>
         </nav>
     </div>
-</div>
+</header>

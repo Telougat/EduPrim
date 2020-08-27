@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>EduPrim</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css"/>
 </head>
 <body>
     <p class="text-center text-rose text-4xl underline cursor-pointer">

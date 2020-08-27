@@ -1,6 +1,7 @@
 package com.eduprim.beans;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Emprunt extends Database {
     private Timestamp dateDebut;
@@ -28,6 +29,20 @@ public class Emprunt extends Database {
                 ex.printStackTrace();
             }
         }
+    }
+
+    public static ArrayList<Emprunt> getEmprunts(Utilisateur utilisateur) {
+        Database database = new Database(true);
+        Connection connection = database.getConnection();
+        ArrayList<Emprunt> emprunts = new ArrayList<>();
+        try {
+            PreparedStatement ps = connection.prepareStatement("SELECT e.DateDebut, e.DateFin, l.ID as livreID, l.Titre as livreTitre, l.Auteur as livreAuteur, l.Reference as livreReference FROM Emprunte as e" +
+                    " INNER JOIN Livres as l ON l.ID = e.ID_Livres" +
+                    " WHERE e.ID = 1");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return emprunts;
     }
 
     public Timestamp getDateDebut() {

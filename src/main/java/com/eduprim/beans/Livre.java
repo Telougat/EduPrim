@@ -1,9 +1,7 @@
 package com.eduprim.beans;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class Livre extends Database {
     private int ID;
@@ -13,6 +11,14 @@ public class Livre extends Database {
 
     public Livre(){
         super(false);
+    }
+
+    public Livre(int ID, String titre, String auteur, String reference) {
+        super(false);
+        this.ID = ID;
+        this.titre = titre;
+        this.auteur = auteur;
+        this.reference = reference;
     }
 
     public Livre(String titre, String auteur, String reference) {
@@ -63,11 +69,28 @@ public class Livre extends Database {
         this.reference = reference;
     }
 
+    public static ArrayList<Livre> getAllLivres() {
+        Database database = new Database(true);
+        Connection connection = database.getConnection();
+        ArrayList<Livre> livres = new ArrayList<>();
+        try {
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM Livres");
+            ResultSet result = ps.executeQuery();
+            while (result.next()) {
+                livres.add(new Livre(result.getInt("ID"), result.getString("Titre"), result.getString("Auteur"), result.getString("Reference")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return livres;
+    }
+
     public boolean rendre() {
         if (Emprunt.isEmprunter(this)) {
             try {
                 PreparedStatement ps = this.connection.prepareStatement("UPDATE Emprunte SET DateFin = ? WHERE ID_Livres = ?");
-                ps.setInt(1, this.ID);
+                ps.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
+                ps.setInt(2, this.ID);
                 int modifications = ps.executeUpdate();
                 if (modifications > 0)
                     return true;

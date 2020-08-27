@@ -1,5 +1,6 @@
 package com.eduprim.beans;
 
+import java.lang.reflect.Array;
 import java.sql.*;
 import java.util.ArrayList;
 

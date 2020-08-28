@@ -25,9 +25,13 @@ public class Connexion extends HttpServlet {
             Helpers.setSessionUser(request, adulte);
             if(session.getAttribute("userExist") != null) {
                 session.setAttribute("userExist", null);
-                //session.removeAttribute("userExist");
             }
-            //this.getServletContext().getRequestDispatcher("/WEB-INF/View/login.jsp").forward(request, response);
+            if(adulte.getStatus().getLabel().equals("Admin")) {
+                this.getServletContext().getRequestDispatcher("/WEB-INF/View/adminLobby.jsp").forward(request, response);
+            }
+            else {
+                response.sendRedirect(request.getContextPath() + "/classes");
+            }
         }
         else {
             session.setAttribute("userExist", false);

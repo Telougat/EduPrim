@@ -16,7 +16,7 @@
             <div class="container flex justify-center">
                 <table class="w-full table-fixed border-2 border-rose px-8 py-2">
                     <thead class="w-full">
-                        <tr class="flex w-full mb-4 text-violet border-b-2 border-rose">
+                        <tr class="flex w-full mb-4 text-violet font-bold border-b-2 border-rose">
                             <th class="p-4 w-1/3">Titre</th>
                             <th class="p-4 w-1/4">Auteur</th>
                             <!--<th class="p-4 w-1/4">Genre</th>-->
@@ -25,7 +25,7 @@
                             <th class="p-4 w-1/4">Emprunteur</th>
                         </tr>
                     </thead>
-                    <tbody class="w-full items-center justify-between overflow-y-scroll" style="height: 50vh">
+                    <tbody class="w-full h-full items-center justify-between overflow-y-scroll" style="height: 50vh">
                         <c:forEach items="${livres}" var="livre">
                             <tr class="w-full flex mb-4 border-b-2 border-rose">
                                 <td class="p-4 w-1/3">${livre.getTitre()}</td>
@@ -45,17 +45,19 @@
                         x-show="open"
                         @click.away="open = false"
                 >
-                    <div class=" absolute z-1000 flex flex-col items-center justify-center font-sans bg-blanc">
-                        <div v-if="modal.visible" @click.self="modal.visible = false" class="h-screen w-full absolute flex items-center justify-center bg-modal">
-                            <div class="bg-white rounded shadow p-8 m-4 max-w-xs max-h-full text-center overflow-y-scroll pt-10">
-                                <h1>Informations du livre</h1>
-                                <div class="mb-8">
-                                    Titre :   <input type="text">
-                                    Auteur :   <input type="text">
-                                </div>
-                                <div class="flex justify-center">
-                                    <button class="flex-no-shrink text-white py-2 px-4 rounded bg-teal hover:bg-teal-dark" type="submit">Valider</button>
-                                </div>
+                    <div  style="margin-top:20em" class=" absolute z-1000 flex flex-col items-center justify-center font-sans bg-blanc">
+                        <div style="width: 50em; height:30em" v-if="modal.visible" @click.self="modal.visible = false" class="absolute flex items-center justify-center bg-blanc pt-15 border-2 border-violet">
+                            <div class="bg-blanc w-3/4 rounded shadow p-8 m-4 max-w-xs max-h-full text-center pt-10 border-2 border-rose">
+                                <h1 class="text-violet">Informations du livre</h1><br/>
+                                <form method="post">
+                                    <div class="mb-8">
+                                        <p class="text-violet pb-3"> Titre :  &nbsp; <input type="text"></p>
+                                        <p class="text-violet pb-3">Auteur :  &nbsp; <input type="text"></p>
+                                    </div>
+                                    <div class="flex justify-center">
+                                        <button class="flex-no-shrink text-blanc py-2 px-4 rounded bg-violet" type="submit" @click="open = false">Valider</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

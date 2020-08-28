@@ -12,7 +12,7 @@
                         <p class="text-xl text-rose">21 professeurs</p>
                     </div>
                 </a>
-                <a href="#" class="w-full md:w-1/2 mx-auto">
+                <a href="/EduPrim_war_exploded/classes" class="w-full md:w-1/2 mx-auto">
                     <div class="text-center border border-gris py-6 cursor-pointer shadow" style="border-radius: 20px;">
                         <h3 class="text-3xl text-violet">Liste des classes</h3>
                         <p class="text-xl text-rose">23 classes</p>

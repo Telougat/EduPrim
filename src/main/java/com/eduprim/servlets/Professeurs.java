@@ -1,21 +1,17 @@
 package com.eduprim.servlets;
 
 import com.eduprim.Helpers;
-import com.eduprim.beans.Adulte;
 import com.eduprim.beans.Classe;
-import com.eduprim.beans.Eleve;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.awt.*;
 import java.io.IOException;
 
-@WebServlet(name = "Classes", urlPatterns = {"/classes"})
-public class Classes extends HttpServlet {
+@WebServlet(name = "Professeurs", urlPatterns = "/professeurs")
+public class Professeurs extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -23,7 +19,6 @@ public class Classes extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (Helpers.userConnected(request))
         {
-            Helpers.getSessionUser(request).initClasseList();
             if (request.getParameter("id") != null) {
                 int id = Integer.parseInt(request.getParameter("id"));
                 Classe classe = new Classe();
@@ -33,12 +28,12 @@ public class Classes extends HttpServlet {
                 request.setAttribute("students", classe.getUtilisateurs());
                 request.setAttribute("grandbg", "background-1.png");
                 request.setAttribute("smallbg", "background-mobile-1.png");
-                this.getServletContext().getRequestDispatcher("/WEB-INF/View/classeUtilisateurList.jsp").forward(request, response);
+                this.getServletContext().getRequestDispatcher("/WEB-INF/View/professeurs.jsp").forward(request, response);
             } else {
                 request.setAttribute("grandbg", "background-1.png");
                 request.setAttribute("smallbg", "background-mobile-1.png");
                 request.setAttribute("classes", Helpers.getSessionUser(request).getClasses());
-                this.getServletContext().getRequestDispatcher("/WEB-INF/View/classes.jsp").forward(request, response);
+                this.getServletContext().getRequestDispatcher("/WEB-INF/View/professeurs.jsp").forward(request, response);
             }
         } else {
             response.sendRedirect(request.getContextPath() + "/connexion");

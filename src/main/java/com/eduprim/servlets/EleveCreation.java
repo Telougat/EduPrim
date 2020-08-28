@@ -1,6 +1,7 @@
 package com.eduprim.servlets;
 
 import com.eduprim.Helpers;
+import com.eduprim.beans.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,9 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Date;
 
-@WebServlet(name = "CreationClasse", urlPatterns = {"/classe/create"})
-public class CreationClasse extends HttpServlet {
+@WebServlet(name = "EleveCreation", urlPatterns = {"/eleve/creation"})
+public class EleveCreation extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -22,7 +24,7 @@ public class CreationClasse extends HttpServlet {
             {
                 request.setAttribute("grandbg", "background-1.png");
                 request.setAttribute("smallbg", "background-mobile-1.png");
-                this.getServletContext().getRequestDispatcher("/WEB-INF/View/creationClasse.jsp").forward(request, response);
+                this.getServletContext().getRequestDispatcher("/WEB-INF/View/creationEleve.jsp").forward(request, response);
             }
             else {
                 response.sendError(403);

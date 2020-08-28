@@ -128,10 +128,8 @@ public class Utilisateur extends Database {
         if (this.connection == null)
             this.getConnection();
         try {
-            PreparedStatement ps = this.connection.prepareStatement("SELECT u.*, s.Label as statusLabel, c.ID as classeID, c.Nom as classeNom FROM Utilisateurs as u" +
+            PreparedStatement ps = this.connection.prepareStatement("SELECT u.*, s.Label as statusLabel FROM Utilisateurs as u" +
                     " INNER JOIN Status as s ON s.ID = u.ID_Status" +
-                    " INNER JOIN Appartient as ap ON ap.ID = u.ID" +
-                    " INNER JOIN Classes as c ON c.ID = ap.ID_Classes" +
                     " WHERE u.ID = ?");
             ps.setInt(1, id);
             ResultSet result = ps.executeQuery();
@@ -142,10 +140,6 @@ public class Utilisateur extends Database {
                 this.dateDeNaissance = result.getDate("DateDeNaissance");
                 this.adresse = result.getString("Adresse");
                 this.status = new Status(result.getInt("ID_Status"), result.getString("statusLabel"));
-                this.classes.add(new Classe(result.getInt("classeID"), result.getString("classeNom")));
-                while (result.next()) {
-                    this.classes.add(new Classe(result.getInt("classeID"), result.getString("classeNom")));
-                }
                 return true;
             }
         }

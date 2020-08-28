@@ -5,45 +5,7 @@
     <head>
         <title>Connectez-vous !</title>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css" />
-
-        <style>
-            img.grandbg {
-                position:fixed;
-                top:0;
-                left:0;
-                z-index:-1;
-                width: 100%;
-                height: 100%;
-                visibility: hidden;
-            }
-
-            img.mobilebg {
-                position:fixed;
-                top:0;
-                left:0;
-                z-index:-1;
-                width: 100%;
-                height: 100%;
-                visibility: visible;
-            }
-
-            @media only screen and (min-width: 1024px) {
-                img.grandbg {
-                    visibility: visible;
-                }
-                img.mobilebg {
-                    visibility: hidden;
-                }
-            }
-
-            .font_tahoma {
-                font-family: Tahoma,sans-serif;
-            }
-
-            .bordures-arrondies {
-                border-radius: 1.6rem;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/custom.css" />
     </head>
     <body class="min-h-screen flex items-center">
         <img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/background-test.png" alt="Background">

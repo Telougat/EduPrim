@@ -12,6 +12,7 @@
 
 <p:page>
     <jsp:body>
+
         <div class="flex justify-center pt-10">
             <div class="container flex justify-center">
                 <table class="w-full table-fixed border-2 border-rose px-8 py-2">
@@ -33,14 +34,13 @@
                                 <td class="p-4 w-1/4">${livre.getAuteur()}</td>
                                 <td class="p-4 w-1/4">${livre.getReference()}</td>
                                 <td class="p-4 w-1/4">Disponible</td>
-                                <td class="p-4 w-1/4">Personne</td>
+                                <td class="p-4 w-1/4"><div>Personne</div><div>logo</div></td>
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table>
             </div>
-
-            <div x-data="{ open: false }" class="pl-10">
+            <div x-data="{ open: false }" class="pl-10" style="visibility: ${visibility}">
                 <button class="bg-violet rounded text-blanc font-bold py-2 px-4" type="button"@click="open = true">Ajouter un livre</button>
 
                 <div

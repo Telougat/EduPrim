@@ -23,6 +23,7 @@ public class Classes extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (Helpers.userConnected(request))
         {
+            Helpers.getSessionUser(request).initClasseList();
             if (request.getParameter("id") != null) {
                 int id = Integer.parseInt(request.getParameter("id"));
                 Classe classe = new Classe();

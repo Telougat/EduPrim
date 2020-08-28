@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/custom.css"/>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body>
+<body class="overflow-x-hidden">
     <c:if test="${grandbg != null && !grandbg.isEmpty()}">
         <img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/${grandbg}" alt="BackgroundDesktop">
     </c:if>

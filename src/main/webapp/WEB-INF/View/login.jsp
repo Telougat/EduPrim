@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css" />
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/custom.css" />
     </head>
-    <body class="min-h-screen flex items-center">
+    <body class="min-h-screen flex items-center overflow-x-hidden">
         <img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/background-1.png" alt="Background">
         <img class="mobilebg" src="${pageContext.request.contextPath}/ressources/images/background-mobile-1.png" alt="Background">
         <div class="w-full flex flex-wrap justify-center mt-16 md:mt-0">

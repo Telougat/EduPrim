@@ -26,6 +26,12 @@ img.mobilebg {
     border-radius: 1.6rem;
 }
 
+
+input:checked + svg {
+    display: block;
+}
+
+
 @media only screen and (min-width: 1024px) {
     img.grandbg {
         visibility: visible;

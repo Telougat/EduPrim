@@ -1,0 +1,42 @@
+body {
+    font-family: Tahoma,sans-serif;
+}
+
+img.grandbg {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+img.mobilebg {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
+.bordures-arrondies {
+    border-radius: 1.6rem;
+}
+
+
+input:checked + svg {
+    display: block;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    img.grandbg {
+        visibility: visible;
+    }
+    img.mobilebg {
+        visibility: hidden;
+    }
+}

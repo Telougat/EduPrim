@@ -17,21 +17,16 @@ public class StudentProfileEdit extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //       Recept student ID
-//        int idEleve = Integer.parseInt(request.getParameter("id"));
+        int idEleve = Integer.parseInt(request.getParameter("id"));
 
-//        Eleve eleve = new Eleve();
-////      Get student information
-//        boolean check = eleve.findEleve(idEleve);
-//        if(check){
+        Eleve eleve = new Eleve();
+//      Get student information
+        boolean check = eleve.findEleve(idEleve);
+        if(check){
 //          Build de response
-//            request.setAttribute("Name", eleve.getNom());
-//            request.setAttribute("firstName", eleve.getPrenom());
-//            request.setAttribute("birthDate", eleve.getDateDeNaissance());
-//            request.setAttribute("address", eleve.getAdresse());
-//            request.setAttribute("mail", eleve.getMailParent());
-//            request.setAttribute("phone", eleve.getTelephoneParent());
+            request.setAttribute("student", eleve);
 //          Send student information to the view
             this.getServletContext().getRequestDispatcher("/WEB-INF/View/studentCardEdit.jsp").forward(request, response);
-//        }
+        }
     }
 }

@@ -20,9 +20,14 @@ public class Classes extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Adulte adulte = new Adulte();
-        adulte.findAdulte(8);
-        request.setAttribute("classes", adulte.getClasses());
-        this.getServletContext().getRequestDispatcher("/WEB-INF/classes.jsp").forward(request, response);
+        if (Helpers.userConnected(request))
+        {
+            request.setAttribute("classes", Helpers.getSessionUser(request).getClasses());
+            request.setAttribute("grandbg", "background-1.png");
+            request.setAttribute("smallbg", "background-mobile-1.png");
+            this.getServletContext().getRequestDispatcher("/WEB-INF/classes.jsp").forward(request, response);
+        } else {
+            response.sendRedirect(request.getContextPath() + "/connexion");
+        }
     }
 }

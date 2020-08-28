@@ -1,15 +1,21 @@
 <%@tag description="Page Template without logo" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>EduPrim</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/custom.css"/>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
-<img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/${grandbg}" alt="Background">
-<img class="mobilebg" src="${pageContext.request.contextPath}/ressources/images/${smallbg}" alt="Background">
-<header id="pageheader" class="w-full text-gray-700 bg-blanc dark-mode:text-gray-200 dark-mode:bg-gray-800 py-3">
-    <div x-data="{ open: false }"  class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <c:if test="${grandbg != null && !grandbg.isEmpty()}">
+        <img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/${grandbg}" alt="BackgroundDesktop">
+    </c:if>
+    <c:if test="${smallbg != null && !smallbg.isEmpty()}">
+        <img class="mobilebg" src="${pageContext.request.contextPath}/ressources/images/${smallbg}" alt="BackgroundMobile">
+    </c:if>
+<header id="pageheader" class="w-full text-gray-700 bg-transparent py-3">
+    <div x-data="{ open: false }"  class="flex flex-col max-w-screen-xl px-4 ml-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div @click.away="open = false" class="p-4 flex flex-row items-end justify-end">
             <button class="md:hidden" @click="open = !open">
                 <svg fill="violet" viewBox="0 0 20 20" class="w-6 h-6">

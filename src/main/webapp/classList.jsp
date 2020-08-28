@@ -13,6 +13,8 @@
 <%--        display: block;--%>
 <%--    }--%>
 <%--</style>--%>
+        <img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/background-1.png" alt="Background">
+        <img class="mobilebg" src="${pageContext.request.contextPath}/ressources/images/background-mobile-1.png" alt="Background">
 
     <div class="flex items-center justify-center w-full p-2 m-2">
                         <span class="w-3/5 flex items-center justify-center border-b-2 border-rose border-opacity-50 pb-3">

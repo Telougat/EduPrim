@@ -24,12 +24,7 @@ public class StudentProfileEdit extends HttpServlet {
         boolean check = eleve.findEleve(idEleve);
         if(check){
 //          Build de response
-            request.setAttribute("Name", eleve.getNom());
-            request.setAttribute("firstName", eleve.getPrenom());
-            request.setAttribute("birthDate", eleve.getDateDeNaissance());
-            request.setAttribute("address", eleve.getAdresse());
-            request.setAttribute("mail", eleve.getMailParent());
-            request.setAttribute("phone", eleve.getTelephoneParent());
+            request.setAttribute("student", eleve);
 //          Send student information to the view
             this.getServletContext().getRequestDispatcher("/WEB-INF/View/studentCardEdit.jsp").forward(request, response);
         }

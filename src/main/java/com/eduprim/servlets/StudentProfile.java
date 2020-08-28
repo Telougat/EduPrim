@@ -1,5 +1,6 @@
 package com.eduprim.servlets;
 
+import com.eduprim.Helpers;
 import com.eduprim.beans.Eleve;
 import com.eduprim.beans.Status;
 
@@ -18,17 +19,23 @@ public class StudentProfile extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (Helpers.userConnected(request)) {
 //       Recept student ID
-        int idEleve = 7 ;//Integer.parseInt(request.getParameter("id"));
+            int idEleve = Integer.parseInt(request.getParameter("id"));
 
-        Eleve eleve = new Eleve();
+            Eleve eleve = new Eleve();
 //      Get student information
-        boolean check = eleve.findEleve(idEleve);
-        if(check){
+            boolean check = eleve.findEleve(idEleve);
+            if (check) {
 //          Build de response
-            request.setAttribute("student", eleve);
+                request.setAttribute("student", eleve);
 //          Send student information to the view
-            this.getServletContext().getRequestDispatcher("/WEB-INF/View/studentCard.jsp").forward(request, response);
+                this.getServletContext().getRequestDispatcher("/WEB-INF/View/studentCard.jsp").forward(request, response);
+            } else {
+                // 404
+            }
+        } else {
+            response.sendRedirect(request.getContextPath() + "/connexion");
         }
     }
 }

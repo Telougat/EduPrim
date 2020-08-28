@@ -33,6 +33,7 @@ public class Livre extends HttpServlet {
             }
 
             request.setAttribute("livres", com.eduprim.beans.Livre.getAllLivres());
+            request.setAttribute("eleves", com.eduprim.beans.Eleve.getAllEleves());
             request.setAttribute("grandbg", "background-1.png");
             request.setAttribute("smallbg", "background-mobile-1.png");
             this.getServletContext().getRequestDispatcher("/WEB-INF/View/livre.jsp").forward(request, response);

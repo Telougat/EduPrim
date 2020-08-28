@@ -6,7 +6,7 @@
     <jsp:body>
         <p:prefabody>
             <jsp:body>
-                <form action="">
+                <form method="POST">
                     <h3 class="text-gris font-bold text-3xl">Création d'une classe</h3>
                     <div class="mt-3">
                         <p class="text-gris font-bold text-xl mb-1">Nom de la classe</p>

@@ -5,45 +5,7 @@
     <head>
         <title>Connectez-vous !</title>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/style.css" />
-
-        <style>
-            img.grandbg {
-                position:fixed;
-                top:0;
-                left:0;
-                z-index:-1;
-                width: 100%;
-                height: 100%;
-                visibility: hidden;
-            }
-
-            img.mobilebg {
-                position:fixed;
-                top:0;
-                left:0;
-                z-index:-1;
-                width: 100%;
-                height: 100%;
-                visibility: visible;
-            }
-
-            @media only screen and (min-width: 1024px) {
-                img.grandbg {
-                    visibility: visible;
-                }
-                img.mobilebg {
-                    visibility: hidden;
-                }
-            }
-
-            .font_tahoma {
-                font-family: Tahoma,sans-serif;
-            }
-
-            .bordures-arrondies {
-                border-radius: 1.6rem;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/custom.css" />
     </head>
     <body class="min-h-screen flex items-center">
         <img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/background-test.png" alt="Background">
@@ -54,26 +16,26 @@
             </div>
             <div class="w-4/5 lg:w-3/5 xl:w-1/2 lg:p-40 rounded px-2 md:px-8 pt-6 pb-8 mb-4 flex flex-col">
                 <form method="post">
-                    <div class="font_tahoma mb-12 text-4xl lg:text-4xl xl:text-6xl text-gris text-center">
+                    <div class="mb-12 text-4xl lg:text-4xl xl:text-6xl text-gris text-center">
                         <h1>Vous êtes de retour !</h1>
                     </div>
                     <c:if test="${sessionScope.userExist == false}">
-                        <label class="text-violet">Ce compte n'existe pas !</label>
+                        <label class="text-violet mb-20">Ce compte n'existe pas !</label>
                     </c:if>
                     <div class="mb-10 md:mb-6">
-                        <label class=" font_tahomablock text-grey-darker font-bold mb-1 text-xl lg:text-xl text-gris" for="email">
+                        <label class="block text-grey-darker font-bold mb-1 text-xl lg:text-xl text-gris" for="email">
                             E-mail
                         </label>
-                        <input class="font_tahoma shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darker" id="email" name="email" type="text" value="fpichon@cesi.fr" required>
+                        <input class="shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darker" id="email" name="email" type="text" required>
                     </div>
                     <div class="mb-10 md:mb-6">
-                        <label class="font_tahoma block text-grey-darker text-xl lg:text-xl font-bold mb-1 text-gris" for="mdp">
+                        <label class="block text-grey-darker text-xl lg:text-xl font-bold mb-1 text-gris" for="mdp">
                             Mot de passe
                         </label>
-                        <input class="font_tahoma shadow appearance-none text-gris focus:text-violet border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darker mb-3" id="mdp" name="mdp" type="password" placeholder="" value="123" required>
+                        <input class="shadow appearance-none text-gris focus:text-violet border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darker mb-3" id="mdp" name="mdp" type="password" placeholder="" required>
                     </div>
                     <div class="flex items-center justify-between">
-                        <button class="font_tahoma bg-violet hover:bg-blue-dark text-blanc text-xl lg:text-xl font-bold p-5 bordures-arrondies w-full" type="submit">
+                        <button class="bg-violet hover:bg-blue-dark text-blanc text-xl lg:text-xl font-bold p-5 bordures-arrondies w-full" type="submit">
                             Se connecter
                         </button>
                     </div>

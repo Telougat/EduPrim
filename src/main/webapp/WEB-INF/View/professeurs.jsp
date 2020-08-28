@@ -12,7 +12,7 @@
                 </h1>
             </div>
             <div class="grid grid-cols-1 gap-6 xl:gap-10 mt-16 mx-12 xl:mx-24">
-                <a class="w-11/12 md:w-1/2 lg:w-1/3 mx-auto text-3xl text-blanc bg-violet text-center bordures-arrondies" href="#">
+                <a class="w-11/12 md:w-1/2 lg:w-1/3 mx-auto text-3xl text-blanc bg-violet text-center bordures-arrondies" href="${pageContext.request.contextPath}/prof/creation">
                     +
                 </a>
                 <c:forEach items="${professeurs}" var="professeur">

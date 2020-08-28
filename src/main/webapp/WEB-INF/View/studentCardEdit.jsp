@@ -9,7 +9,7 @@
             <div class="flex items-center justify-center w-full p-2 m-2">
                     <span class="w-3/5 text-violet font-bold flex items-center justify-center border-2 border-violet border-opacity-75 p-3 rounded-full">
                         <div class="flex items-start w-1/6">
-                            <svg class="w-6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg fill="#D07EF3" class="w-6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 477.867 477.867" style="enable-background:new 0 0 477.867 477.867;" xml:space="preserve">
                                 <g><g><path d="M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933
                                             C477.726,107.033,370.834,0.141,238.933,0z M370.466,165.666L199.799,336.333c-6.665,6.663-17.468,6.663-24.132,0l-68.267-68.267
@@ -23,11 +23,11 @@
             </div>
         </c:if>
 
-        <c:if test="${ cde != '-1' }">
+        <c:if test="${ !cde && cde != null}">
             <div class="flex items-center justify-center w-full p-2 m-2">
                     <span class="w-3/5 text-violet font-bold flex items-center justify-center border-2 border-violet border-opacity-75 p-3 rounded-full">
                         <div class="flex items-start w-1/6">
-                            <svg class="w-6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg fill="#D07EF3" class="w-6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                     <path d="M501.609,384.603L320.543,51.265c-13.666-23.006-37.802-36.746-64.562-36.746c-26.76,0-50.896,13.74-64.562,36.746
                                         c-0.103,0.176-0.19,0.352-0.293,0.528L10.662,384.076c-13.959,23.491-14.223,51.702-0.719,75.457
@@ -68,7 +68,7 @@
                         <br>
                         <div class="my-3">
                             <p class="font-semibold text-violet mb-1">Date de naissance :</p>
-                            <input name="date" class="border text-gris border-gris rounded-lg p-2 focus:text-violet focus:border-rose focus:shadow-2xl shadow-lg border-opacity-50" id="birthDate"  value="${student.getDateDeNaissance()}">
+                            <input type="date" name="date" class="border text-gris border-gris rounded-lg p-2 focus:text-violet focus:border-rose focus:shadow-2xl shadow-lg border-opacity-50" id="birthDate"  value="${student.getDateDeNaissance()}">
                         </div>
                         <div class="my-3">
                             <p class="font-semibold text-violet mb-1">Adresse du responsable :</p>

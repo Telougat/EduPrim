@@ -13,7 +13,6 @@
 </head>
 <p:page>
     <jsp:body>
-        <body>
             <!-- student card -->
             <div class="flex bg-blanc shadow-2xl rounded-lg mx-4 md:mx-auto my-56 w-3/5 border border-gris border-1 pr-4 pl-4">
                 <div class="flex items-start px-4 py-6 w-full ml-2">
@@ -55,6 +54,5 @@
                     </div>
                 </div>
             </div>
-        </body>
     </jsp:body>
 </p:page>

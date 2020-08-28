@@ -45,7 +45,7 @@ public class StudentProfileEdit extends HttpServlet {
             eleve.setNom(name);
             eleve.setPrenom(firstName);
 
-            boolean cde = eleve.save();
+            boolean cde = eleve.save(false);
 
             request.setAttribute("cde", cde);
             request.setAttribute("student", eleve);

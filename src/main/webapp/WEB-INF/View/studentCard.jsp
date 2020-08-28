@@ -41,7 +41,7 @@
                         <img src="${pageContext.request.contextPath}/ressources/images/user.png" alt="user logo">
                             <br>
                                <a href="${pageContext.request.contextPath}/edition?id=${student.getID()}">
-                                <button class="bg-violet text-blanc font-bold w-full p-1 rounded-lg  shadow-lg">
+                                <button class="uppercase tracking-widest  bg-violet text-blanc font-bold w-full p-1 rounded-lg  shadow-lg">
                                     Modifier
                                 </button>
                                </a>

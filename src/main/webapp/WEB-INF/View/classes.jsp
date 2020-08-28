@@ -13,10 +13,12 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 xl:gap-24 mt-16 mx-12 xl:mx-24">
                 <c:forEach items="${classes}" var="classe">
-                    <div class="text-center border border-gris py-6 cursor-pointer shadow" style="border-radius: 20px;">
-                        <h3 class="text-3xl text-violet"><c:out value="${classe.getNom()}"/></h3>
-                        <p class="text-xl text-rose"><c:out value="${classe.count()}"/> élèves</p>
-                    </div>
+                    <a href="?id=${classe.getID()}">
+                        <div class="text-center border border-gris py-6 cursor-pointer shadow" style="border-radius: 20px;">
+                            <h3 class="text-3xl text-violet"><c:out value="${classe.getNom()}"/></h3>
+                            <p class="text-xl text-rose"><c:out value="${classe.count()}"/> élèves</p>
+                        </div>
+                    </a>
                 </c:forEach>
             </div>
         </div>

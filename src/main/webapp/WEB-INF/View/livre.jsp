@@ -49,7 +49,7 @@
                         <div style="width: 50em; height:30em" v-if="modal.visible" @click.self="modal.visible = false" class="absolute flex items-center justify-center bg-blanc pt-15 border-2 border-violet">
                             <div class="bg-blanc w-3/4 rounded shadow p-8 m-4 max-w-xs max-h-full text-center pt-10 border-2 border-rose">
                                 <h1 class="text-violet">Informations du livre</h1><br/>
-                                <form method="post">
+                                <form method="get">
                                     <div class="mb-8">
                                         <p class="text-violet pb-3"> Titre :  &nbsp; <input type="text"></p>
                                         <p class="text-violet pb-3">Auteur :  &nbsp; <input type="text"></p>

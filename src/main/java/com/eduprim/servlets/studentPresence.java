@@ -27,7 +27,7 @@ public class studentPresence extends HttpServlet {
            classe.initUtilisateursList();
            request.setAttribute("students", classe.getUtilisateurs());
            request.setAttribute("name", classe.getNom());
-           this.getServletContext().getRequestDispatcher("/WEB-INF/View/classList.jsp").forward(request, response);
+           this.getServletContext().getRequestDispatcher("/WEB-INF/View/classeUtilisateurList.jsp").forward(request, response);
         }
     }
 }

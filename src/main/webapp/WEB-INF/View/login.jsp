@@ -8,8 +8,8 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/css/custom.css" />
     </head>
     <body class="min-h-screen flex items-center">
-        <img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/background-test.png" alt="Background">
-        <img class="mobilebg" src="${pageContext.request.contextPath}/ressources/images/background-test-mobile.png" alt="Background">
+        <img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/background-1.png" alt="Background">
+        <img class="mobilebg" src="${pageContext.request.contextPath}/ressources/images/background-mobile-1.png" alt="Background">
         <div class="w-full flex flex-wrap justify-center mt-16 md:mt-0">
             <div class="mb-4 w-5/6 md:w-4/6 lg:w-2/5 xl:w-1/2 lg:p-20 xl:p-40 flex items-center">
                 <img class="w-full" src="${pageContext.request.contextPath}/ressources/images/logo.png" alt="logo">

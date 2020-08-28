@@ -27,7 +27,7 @@ public class Connexion extends HttpServlet {
                 session.setAttribute("userExist", null);
             }
             if(adulte.getStatus().getLabel().equals("Admin")) {
-                this.getServletContext().getRequestDispatcher("/WEB-INF/View/adminLobby.jsp").forward(request, response);
+                response.sendRedirect(request.getContextPath() + "/accueil");
             }
             else {
                 response.sendRedirect(request.getContextPath() + "/classes");

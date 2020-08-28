@@ -12,7 +12,7 @@
 <c:if test="${smallbg != null && !smallbg.isEmpty()}">
     <img class="mobilebg" src="${pageContext.request.contextPath}/ressources/images/${smallbg}" alt="Background">
 </c:if>
-<header id="pageheader" class="w-full text-gray-700 bg-transparent py-3">
+<header id="pageheader" class="w-full text-gray-700 bg-blanc bg-opacity-75 py-3">
     <div x-data="{ open: false }"  class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div class="w-24 h-16">
             <img src="${pageContext.request.contextPath}/ressources/images/logo_admin.png" alt="logo">

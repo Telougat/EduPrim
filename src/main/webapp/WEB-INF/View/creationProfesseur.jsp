@@ -11,36 +11,36 @@
                     <div class="mt-3 grid grid-cols-2 col-gap-3">
                         <div>
                             <p class="text-gris font-bold text-xl mb-1">Nom</p>
-                            <input class="w-full border-2 border-gris rounded-lg p-2" type="text" id="nom" name="nom"/>
+                            <input class="w-full shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darke" type="text" id="nom" name="nom"/>
                         </div>
                         <div>
                             <p class="text-gris font-bold text-xl mb-1">Prénom</p>
-                            <input class="w-full border-2 border-gris rounded-lg p-2" type="text" id="prenom" name="prenom"/>
+                            <input class="w-full shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darke2" type="text" id="prenom" name="prenom"/>
                         </div>
                     </div>
                     <div class="mt-6">
                         <p class="text-gris font-bold text-xl mb-1">Adresse</p>
-                        <input class="w-full border-2 border-gris rounded-lg p-2" type="text" id="adresse" name="adresse"/>
+                        <input class="w-full shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darke" type="text" id="adresse" name="adresse"/>
                     </div>
                     <div class="mt-6">
                         <p class="text-gris font-bold text-xl mb-1">Téléphone</p>
-                        <input class="w-full border-2 border-gris rounded-lg p-2" type="text" id="telephone" name="telephone"/>
+                        <input class="w-full shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darke" type="text" id="telephone" name="telephone"/>
                     </div>
                     <div class="mt-6">
                         <p class="text-gris font-bold text-xl mb-1">Date de naissance</p>
-                        <input class="w-full border-2 border-gris rounded-lg p-2" type="date" id="naissance" name="naissance"/>
+                        <input class="w-full shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darke" type="date" id="naissance" name="naissance"/>
                     </div>
                     <div class="mt-6">
                         <p class="text-gris font-bold text-xl mb-1">Mail</p>
-                        <input class="w-full border-2 border-gris rounded-lg p-2" type="text" id="mail" name="mail"/>
+                        <input class="w-full shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darke" type="text" id="mail" name="mail"/>
                     </div>
                     <div class="mt-6">
                         <p class="text-gris font-bold text-xl mb-1">Mot de passe</p>
-                        <input class="w-full border-2 border-gris rounded-lg p-2" type="password" id="motDePasse" name="motDePasse"/>
+                        <input class="w-full shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darke" type="password" id="motDePasse" name="motDePasse"/>
                     </div>
                     <div class="mt-6">
                         <p class="text-gris font-bold text-xl mb-1">Confirmer le mot de passe</p>
-                        <input class="w-full border-2 border-gris rounded-lg p-2" type="password" id="confirmMotDePasse"/>
+                        <input class="w-full shadow appearance-none text-gris focus:text-violet border-solid border border-gris text-xl lg:text-xl bordures-arrondies w-full py-4 px-4 text-grey-darke" type="password" id="confirmMotDePasse"/>
                     </div>
                     <input class="appearance-none text-center w-full bg-violet mt-6 rounded-lg py-2 text-blanc font-bold" type="submit" value="Créer le compte"/>
                 </form>

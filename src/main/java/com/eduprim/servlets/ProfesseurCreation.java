@@ -28,9 +28,7 @@ public class ProfesseurCreation extends HttpServlet {
                 String motDePasse = request.getParameter("motDePasse");
                 String adresse = request.getParameter("adresse");
                 String telephone = request.getParameter("telephone");
-                System.out.println("OK !");
                 if (checkValue(nom) && checkValue(prenom) && checkValue(mail) && checkValue(naissance) && checkValue(motDePasse) && checkValue(adresse) && checkValue(telephone)) {
-                    System.out.println("PAssage !");
                     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                     Date parsed = null;
                     java.sql.Date sqlDate = null;

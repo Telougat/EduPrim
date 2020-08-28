@@ -3,17 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <p:page>
     <jsp:body>
-<<<<<<< HEAD:src/main/webapp/WEB-INF/View/classeUtilisateurList.jsp
-=======
-<%--<style>--%>
-<%--    input:checked + svg {--%>
-<%--        display: block;--%>
-<%--    }--%>
-<%--</style>--%>
-        <img class="grandbg" src="${pageContext.request.contextPath}/ressources/images/background-1.png" alt="Background">
-        <img class="mobilebg" src="${pageContext.request.contextPath}/ressources/images/background-mobile-1.png" alt="Background">
-
->>>>>>> 1254d25e0febabdfbf119dab311d4c6257d2a190:src/main/webapp/classList.jsp
     <div class="flex items-center justify-center w-full p-2 m-2">
         <span class="w-3/5 flex items-center justify-center border-b-2 border-rose border-opacity-50 pb-3">
             <h1 class="text-3xl text-violet font-bold tracking-widest">CLASSE ${ name }</h1>

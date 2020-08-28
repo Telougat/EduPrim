@@ -1,6 +1,7 @@
 package com.eduprim.beans;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Adulte extends Utilisateur {
 
@@ -16,6 +17,17 @@ public class Adulte extends Utilisateur {
         this.telephone = telephone;
         this.mail = mail;
         this.saveNewAdulte(motDePasse);
+    }
+
+    public Adulte(int ID, String nom, String prenom, Date naissance, String addresse, Status status, long telephone, String mail) {
+        this.setID(ID);
+        this.setNom(nom);
+        this.setPrenom(prenom);
+        this.setDateDeNaissance(naissance);
+        this.setAdresse(addresse);
+        this.setStatus(status);
+        this.telephone = telephone;
+        this.mail = mail;
     }
 
     public Adulte(Utilisateur utilisateur) {
@@ -138,6 +150,32 @@ public class Adulte extends Utilisateur {
             ex.printStackTrace();
         }
         return false;
+    }
+
+    public static ArrayList<Adulte> getAllProffeseurs() {
+        Database database = new Database(true);
+        Connection connection = database.getConnection();
+        ArrayList<Adulte> professeurs = new ArrayList<>();
+        try {
+            PreparedStatement ps = connection.prepareStatement("SELECT a.*, s.ID as statusID, s.Label as statusLabel FROm Adulte as a" +
+                    " INNER JOIN Status as s ON s.id = a.ID_Status" +
+                    " WHERE s.Label = 'Professeur'");
+            ResultSet result = ps.executeQuery();
+            while (result.next()) {
+                int ID = result.getInt("ID");
+                String nom = result.getString("Nom");
+                String prenom = result.getString("Prenom");
+                Date naissance = result.getDate("DateDeNaissance");
+                String addresse = result.getString("Adresse");
+                Status status = new Status(result.getInt("statusID"), result.getString("statusLabel"));
+                long telephone = result.getLong("Telephone");
+                String mail = result.getString("Mail");
+                professeurs.add(new Adulte(ID, nom, prenom, naissance, addresse, status, telephone, mail));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return professeurs;
     }
 
     public boolean save(boolean dontSaveUtilisateur) {

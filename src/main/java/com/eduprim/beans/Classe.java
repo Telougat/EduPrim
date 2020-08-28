@@ -1,9 +1,6 @@
 package com.eduprim.beans;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class Classe extends Database {
@@ -150,6 +147,22 @@ public class Classe extends Database {
             ex.printStackTrace();
         }
         return -1;
+    }
+
+    public static ArrayList<Classe> getAllClasses() {
+        Database database = new Database(true);
+        Connection connection = database.getConnection();
+        ArrayList<Classe> classes = new ArrayList<>();
+        try {
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM Classes");
+            ResultSet result = ps.executeQuery();
+            while (result.next()) {
+                classes.add(new Classe(result.getInt("ID"), result.getString("Nom")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return classes;
     }
 
     public boolean save() {

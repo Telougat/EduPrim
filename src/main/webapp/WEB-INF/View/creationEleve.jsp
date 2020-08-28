@@ -26,7 +26,9 @@
                         <div>
                             <p class="text-gris font-bold text-xl mb-1 invisible">Classe</p>
                             <select name="classe" id="classe" class="w-full appearance-none border-2 border-gris rounded-lg p-2 text-gris text-opacity-50">
-                                <option value="classe">Classe</option> <%--TODO: foreach into class list--%>
+                                <c:forEach items="${classes}" var="classe">
+                                    <option value="${classe.getID()}">${classe.getNom()}</option>
+                                </c:forEach>
                             </select>
                         </div>
                     </div>

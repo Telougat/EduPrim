@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "Accueil - Admin", urlPatterns = {"/accueil-admin"})
-public class adminLobby extends HttpServlet {
+@WebServlet(name = "Accueil - Admin", urlPatterns = {"/accueil"})
+public class Accueil extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

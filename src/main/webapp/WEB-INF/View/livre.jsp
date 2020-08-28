@@ -19,6 +19,7 @@
                         <tr class="flex w-full mb-4 text-violet font-bold border-b-2 border-rose">
                             <th class="p-4 w-1/3">Titre</th>
                             <th class="p-4 w-1/4">Auteur</th>
+                            <th class="p-4 w-1/4">Référence</th>
                             <!--<th class="p-4 w-1/4">Genre</th>-->
                             <!--<th class="p-4 w-1/2">Résumé</th>-->
                             <th class="p-4 w-1/4">Statut</th>
@@ -31,6 +32,7 @@
                                 <td class="p-4 w-1/3">${livre.getTitre()}</td>
                                 <td class="p-4 w-1/4">${livre.getAuteur()}</td>
                                 <td class="p-4 w-1/4">${livre.getReference()}</td>
+                                <td class="p-4 w-1/4">Disponible</td>
                                 <td class="p-4 w-1/4">Personne</td>
                             </tr>
                         </c:forEach>
@@ -51,8 +53,9 @@
                                 <h1 class="text-violet">Informations du livre</h1><br/>
                                 <form method="get">
                                     <div class="mb-8">
-                                        <p class="text-violet pb-3"> Titre :  &nbsp; <input type="text"></p>
-                                        <p class="text-violet pb-3">Auteur :  &nbsp; <input type="text"></p>
+                                        <p class="text-violet pb-4"> Titre :  &nbsp; <input type="text" name="titre"></p>
+                                        <p class="text-violet pb-4">Auteur :  &nbsp; <input type="text" name="auteur"></p>
+                                        <p class="text-violet">Référence :  &nbsp; <input type="text" name="reference"></p>
                                     </div>
                                     <div class="flex justify-center">
                                         <button class="flex-no-shrink text-blanc py-2 px-4 rounded bg-violet" type="submit" @click="open = false">Valider</button>

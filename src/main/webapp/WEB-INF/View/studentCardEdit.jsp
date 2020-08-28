@@ -7,7 +7,6 @@
 --%>
 <p:page>
     <jsp:body>
-        <body>
             <div class="flex items-center justify-center w-full p-2 m-2">
                     <span class="w-3/5 flex items-center justify-center border-b-2 border-rose border-opacity-75 pb-3">
                         <h1 class="text-3xl text-violet font-bold tracking-widest">ÉDITION</h1>
@@ -56,6 +55,5 @@
                     </div>
                 </div>
             </div>
-        </body>
     </jsp:body>
 </p:page>

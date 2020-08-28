@@ -64,7 +64,7 @@
                         <h1>Vous êtes de retour !</h1>
                     </div>
                     <c:if test="${sessionScope.userExist == false}">
-                        <label class="text-violet">Ce compte n'existe pas !</label>
+                        <label class="text-violet mb-20">Ce compte n'existe pas !</label>
                     </c:if>
                     <div class="mb-20 lg:mb-6">
                         <label class=" font_tahomablock text-grey-darker font-bold mb-1 text-5xl lg:text-xl text-gris" for="email">

@@ -65,6 +65,27 @@ public class Classe extends Database {
         this.utilisateurs = utilisateurs;
     }
 
+    public int count() {
+        if (this.connection == null)
+            this.getConnection();
+        try {
+            PreparedStatement ps = this.connection.prepareStatement("SELECT COUNT(*) as nombre FROM Utilisateurs as u" +
+                    " INNER JOIN Appartient as ap ON u.ID = ap.ID" +
+                    " INNER JOIN Classes as c ON ap.ID_Classes = c.ID" +
+                    " WHERE c.ID = ?");
+            ps.setInt(1, this.getID());
+            ResultSet result = ps.executeQuery();
+            if (result.next()) {
+                return result.getInt("nombre");
+            }
+        }
+        catch (SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+        return 0;
+    }
+
     public boolean findClasse(String nom) {
         if (this.connection == null)
             this.getConnection();

@@ -25,11 +25,11 @@
             </nav>
         </div>
     </header>
+
 <div id="body">
     <jsp:doBody/>
 </div>
 <footer id="pagefooter">
-    TEST
 </footer>
 </body>
 </html>

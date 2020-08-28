@@ -37,7 +37,14 @@ public class Classes extends HttpServlet {
             } else {
                 request.setAttribute("grandbg", "background-1.png");
                 request.setAttribute("smallbg", "background-mobile-1.png");
-                request.setAttribute("classes", Helpers.getSessionUser(request).getClasses());
+                if (Helpers.getSessionUser(request).getStatus().getLabel().equals("Admin"))
+                {
+                    request.setAttribute("classes", Classe.getAllClasses());
+                }
+                else
+                {
+                    request.setAttribute("classes", Helpers.getSessionUser(request).getClasses());
+                }
                 this.getServletContext().getRequestDispatcher("/WEB-INF/View/classes.jsp").forward(request, response);
             }
         } else {

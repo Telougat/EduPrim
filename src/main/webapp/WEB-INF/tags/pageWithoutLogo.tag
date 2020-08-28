@@ -14,7 +14,7 @@
     <c:if test="${smallbg != null && !smallbg.isEmpty()}">
         <img class="mobilebg" src="${pageContext.request.contextPath}/ressources/images/${smallbg}" alt="BackgroundMobile">
     </c:if>
-<header id="pageheader" class="w-full text-gray-700 bg-transparent py-3">
+<header id="pageheader" class="w-full text-gray-700 bg-blanc bg-opacity-75 py-3">
     <div x-data="{ open: false }"  class="flex flex-col max-w-screen-xl px-4 ml-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div @click.away="open = false" class="p-4 flex flex-row items-end justify-end">
             <button class="md:hidden" @click="open = !open">

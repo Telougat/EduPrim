@@ -89,7 +89,7 @@ public class Eleve extends Utilisateur {
         if (!dontSaveUtilisateur)
             super.save();
         try {
-            PreparedStatement ps = this.connection.prepareStatement("UPDATE Adulte SET Nom = ?, Prenom = ?, DateDeNaissance = ?, Adresse = ?, ID_Status = ?, Telephone_Parent = ?, Mail_Parent = ? WHERE ID = ?");
+            PreparedStatement ps = this.connection.prepareStatement("UPDATE Eleve SET Nom = ?, Prenom = ?, DateDeNaissance = ?, Adresse = ?, ID_Status = ?, Telephone_Parent = ?, Mail_Parent = ? WHERE ID = ?");
             ps.setString(1, this.getNom());
             ps.setString(2, this.getPrenom());
             ps.setDate(3, this.getDateDeNaissance());

@@ -61,9 +61,6 @@ public class EleveCreation extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        for (Adulte prof : Adulte.getAllProffeseurs()) {
-            System.out.println(prof.getNom());
-        }
         if (Helpers.userConnected(request))
         {
             if (Helpers.getSessionUser(request).getStatus().getLabel().equals("Admin"))

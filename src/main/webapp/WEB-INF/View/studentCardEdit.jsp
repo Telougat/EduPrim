@@ -7,8 +7,8 @@
 
         <c:if test="${ cde }">
             <div class="flex items-center justify-center w-full p-2 m-2">
-                    <span class="w-3/5 text-violet font-bold flex items-center justify-center border-2 border-violet border-opacity-75 p-3 rounded-full">
-                        <div class="flex items-start w-1/6">
+                    <div class="w-3/5 text-violet tracking-widest flex items-center justify-center border-2 border-violet border-opacity-75 p-3 md:rounded-full ">
+                        <div class="flex items-start w-1/12 hidden sm:flex">
                             <svg fill="#D07EF3" class="w-6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 477.867 477.867" style="enable-background:new 0 0 477.867 477.867;" xml:space="preserve">
                                 <g><g><path d="M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933
@@ -16,17 +16,17 @@
                                             c-6.78-6.548-6.968-17.352-0.42-24.132c6.548-6.78,17.352-6.968,24.132-0.42c0.142,0.138,0.282,0.277,0.42,0.42l56.201,56.201
                                             l158.601-158.601c6.78-6.548,17.584-6.36,24.132,0.419C376.854,148.567,376.854,159.052,370.466,165.666z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
                        </div>
-                        <div class="w-5/6 flex items-center justify-center">
+                        <div class="w-11/12 flex items-center justify-center ">
                             <p>Les modifications ont bien été prises en compte !</p>
                         </div>
-                    </span>
+                    </div>
             </div>
         </c:if>
 
         <c:if test="${ !cde && cde != null}">
             <div class="flex items-center justify-center w-full p-2 m-2">
-                    <span class="w-3/5 text-violet font-bold flex items-center justify-center border-2 border-violet border-opacity-75 p-3 rounded-full">
-                        <div class="flex items-start w-1/6">
+                    <span class="w-3/5 tracking-widest text-violet flex items-center justify-center border-2 border-violet border-opacity-75 p-3 rounded-full">
+                        <div class="flex items-start w-11/12 hidden sm:flex">
                             <svg fill="#D07EF3" class="w-6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                     <path d="M501.609,384.603L320.543,51.265c-13.666-23.006-37.802-36.746-64.562-36.746c-26.76,0-50.896,13.74-64.562,36.746
@@ -51,16 +51,16 @@
                     </span>
             </div>
             <!-- student card -->
-            <div class="flex bg-blanc shadow-2xl rounded-lg mx-4 md:mx-auto w-3/5 border border-gris border-1 pr-4 pl-4">
+            <div class="flex  bg-blanc shadow-2xl rounded-lg md:mx-4 md:mx-auto md:w-3/5 w-full md:border border-gris border-1 pr-4 pl-4">
                 <form method="post">
-                <div class="flex items-start px-4 py-6 w-full ml-2">
+                <div class="flex flex-col md:flex-row items-start px-4 py-6 w-full ml-2">
                     <div class="w-full md:w-1/2 bg-red-200 p-1 h-full">
                         <div class="flex flex-wrap w-full">
                             <div class="md:w-1/2 w-full">
                                 <p class="font-semibold text-violet mb-1">Nom :</p>
                                 <input name="name"  class=" border text-gris border-gris rounded-lg p-2 focus:text-violet focus:border-rose focus:shadow-2xl shadow-lg w-5/6 border-opacity-50" id="name"  value="${student.getNom()}">
                             </div>
-                            <div class="w-1/2">
+                            <div class="w-1/2 w-full">
                                 <p class="font-semibold text-violet mb-1">Prénom :</p>
                                 <input  name="firstName" class="border text-gris border-gris rounded-lg p-2 focus:text-violet focus:border-rose focus:shadow-2xl shadow-lg w-5/6 border-opacity-50" id="firstName"  value="${student.getPrenom()}">
                             </div>
@@ -87,11 +87,11 @@
                             <input name="id"  value="${student.getID()}">
                         </div>
                     </div>
-                    <div class="flex flex-col items-center justify-center md:w-1/2 h-full p-1 hidden md:flex">
+                    <div class="flex flex-col items-center justify-center md:w-1/2 h-full p-1 ">
                         <div class="w-64">
-                        <img src="${pageContext.request.contextPath}/ressources/images/user.png" alt="user logo">
+                        <img class="hidden md:flex" src="${pageContext.request.contextPath}/ressources/images/user.png" alt="user logo">
                             <br>
-                        <button id="UpdateBtn" type="submit" class="bg-violet text-blanc font-bold w-full p-1 rounded-lg  hover:shadow-2xl  hover:bg-rose text-white border-b-4 border-rose ">Valider</button>
+                        <button id="UpdateBtn" type="submit" class="tracking-widest uppercase bg-violet text-blanc font-bold w-full p-1 rounded-lg  hover:shadow-2xl  hover:bg-rose text-white border-b-4 border-rose ">Valider</button>
                         </div>
                     </div>
                 </div>
